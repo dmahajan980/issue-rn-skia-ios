@@ -18,16 +18,35 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dmahajan98.skiaplay"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.dmahajan98.skiaplay"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "6d0c10fc-885f-4837-b329-e7a00a64c386"
+      }
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "kotlinVersion": "1.6.21",
+            "enableProguardInReleaseBuilds": true,
+            "extraProguardRules": "-keep class com.shopify.reactnative.skia.** { *; }"
+          }
+        }
+      ]
+    ]
   }
 }
